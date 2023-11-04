@@ -4,10 +4,10 @@ import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Typography } f
 const CardsGrid = ({ results }) => {
     return (
         <Box sx={{ flexGrow: 1, padding: '1rem' }}>
-            <Grid sx={{ justifyContent: 'space-between', alignItems: 'center' }} container spacing={2} columnSpacing={{ sx: 1, sm: 2, md: 3, lg: 4 }} rowSpacing={2} columns={{ xs: 1, sm: 2, md: 4 }}>
+            <Grid sx={{ justifyContent: 'space-between', alignItems: 'center' }} container spacing={2} rowSpacing={2} columns={{ xs: 8, sm: 24, md: 32 }}>
                 {results.map(({ id, name, image }) => (
-                    <Grid item key={id}>
-                        <Card sx={{ maxWidth: 345 }}>
+                    <Grid item xs={8} key={id}>
+                        <Card sx={{ maxWidth: 300, height: '400px' }}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
