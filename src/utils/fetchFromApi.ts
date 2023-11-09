@@ -31,3 +31,18 @@ export const filterCharactersByName = async (name: string) => {
         console.error('Enable to get characters. ', error);
     }
 }
+
+export const getCharacterById = async (id: number) => {
+    try {
+        const response = await axios.get(`${BASE_URL}${characters}/${id}`, { responseType: 'json' });
+
+        if (response.status === 200) {
+            return response.data;
+        } else {
+            throw new Error(`Request failed with status ${response.status}`);
+        }
+
+    } catch (error) {
+        console.error('Enable to get characters. ', error);
+    }
+}
