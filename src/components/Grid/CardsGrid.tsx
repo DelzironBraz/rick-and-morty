@@ -6,9 +6,9 @@ const CardsGrid = ({ results }) => {
 
     return (
         <Box sx={{ flexGrow: 1, padding: '1rem' }}>
-            <Grid sx={{ justifyContent: 'space-between', alignItems: 'center' }} container spacing={2} rowSpacing={2} columns={{ xs: 8, sm: 24, md: 32 }}>
+            <Grid sx={{ justifyContent: 'space-around', alignItems: 'center' }} container spacing={2} rowSpacing={2} columns={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                 {results.map(({ id, name, image }) => (
-                    <Grid item xs={8} key={id}>
+                    <Grid item xs={8} key={id} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <Link to={`about/${id}`}>
                             <Card sx={{ maxWidth: 300, height: '400px' }}>
                                 <CardActionArea>
@@ -19,12 +19,11 @@ const CardsGrid = ({ results }) => {
                                         image={image}
                                         alt={name}
                                     />
-                                    <CardContent>
-                                        <Typography sx={{ textAlign: 'center' }} gutterBottom variant="h5" component="div">
+                                    <CardContent sx={{ display: 'flex', justifyContent: 'center', alignContent: 'center', height: '100%', textAlign: 'center' }}>
+                                        <Typography variant="h5" component="div">
                                             {name}
                                         </Typography>
                                     </CardContent>
-
                                 </CardActionArea>
                             </Card>
                         </Link>
@@ -32,7 +31,7 @@ const CardsGrid = ({ results }) => {
                 ))}
             </Grid>
         </Box>
-    )
+    );
 }
 
 export default CardsGrid;
